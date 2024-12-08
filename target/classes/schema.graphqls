@@ -1,0 +1,61 @@
+# src/main/resources/graphql/schema.graphqls
+
+type Pet {
+    id: ID!
+    name: String!
+    animalType: String!
+    breed: String!
+    age: Int!
+    household: Household!
+}
+
+type Household {
+    id: ID!
+    eircode: String!
+    numberOfOccupants: Int!
+    maxOccupants: Int!
+    ownerOccupied: Boolean!
+    pets: [Pet!]
+}
+
+type PetStatistics {
+    totalPets: Int!
+    averageAge: Float
+    oldestAge: Int
+}
+
+type HouseholdStatistics {
+    totalHouseholds: Int!
+    emptyHouses: Int!
+    fullHouses: Int!
+}
+
+input HouseholdInput {
+    eircode: String!
+    numberOfOccupants: Int!
+    maxOccupants: Int!
+    ownerOccupied: Boolean!
+}
+
+type Query {
+    # Households
+    getAllHouseholds: [Household!]!
+    getHousehold(id: ID!): Household
+    
+    # Pets
+    getPetsByAnimalType(animalType: String!): [Pet!]!
+    getPet(id: ID!): Pet
+    
+    # Statistics
+    getPetStatistics: PetStatistics!
+    getHouseholdStatistics: HouseholdStatistics!
+}
+
+type Mutation {
+    # Households
+    createHousehold(input: HouseholdInput!): Household!
+    deleteHousehold(id: ID!): Boolean!
+    
+    # Pets
+    deletePet(id: ID!): Boolean!
+}

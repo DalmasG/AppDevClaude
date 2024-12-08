@@ -1,0 +1,13 @@
+com\example\petappai\repository\PetRepository.class
+com\example\petappai\PetAppAiApplication.class
+com\example\petappai\service\PetServiceImpl.class
+com\example\petappai\service\PetService.class
+com\example\petappai\entity\Household.class
+com\example\petappai\controller\HouseholdController.class
+com\example\petappai\entity\Pet.class
+com\example\petappai\service\HouseholdService.class
+com\example\petappai\repository\HouseholdRepository.class
+com\example\petappai\dto\PetNameTypeBreedDTO.class
+com\example\petappai\service\HouseholdServiceImpl.class
+com\example\petappai\dto\HouseholdWithoutPetsDTO.class
+com\example\petappai\controller\PetController.class
